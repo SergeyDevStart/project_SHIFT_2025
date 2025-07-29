@@ -1,4 +1,5 @@
 # project_SHIFT_2025
+![CI GitHubAction](https://github.com/SergeyDevStart/project_SHIFT_2025/actions/workflows/maven.yml/badge.svg)
 
 ## Описание проекта
 Данный проект - это консольное приложение, разрабатываемое в качестве тестового задания для проекта ШИФТ.
