@@ -21,7 +21,7 @@ public class CmdParser {
             cmd = parser.parse(options, args);
             inputFiles = cmd.getArgs();
             validator.validate(cmd, inputFiles);
-        } catch (ParseException | IllegalArgumentException e) {
+        } catch (ParseException | ValidationException e) {
             System.err.println("Ошибка: " + e.getMessage());
             System.exit(1);
         }
