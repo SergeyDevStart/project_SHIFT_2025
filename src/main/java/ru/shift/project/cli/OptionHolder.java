@@ -1,4 +1,4 @@
-package ru.shift.project;
+package ru.shift.project.cli;
 
 public class OptionHolder {
     private boolean appendMode;

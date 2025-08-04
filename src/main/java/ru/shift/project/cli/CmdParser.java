@@ -1,6 +1,7 @@
-package ru.shift.project;
+package ru.shift.project.cli;
 
 import org.apache.commons.cli.*;
+import ru.shift.project.exception.ValidationException;
 
 public class CmdParser {
     private final Options options = new Options();
@@ -25,7 +26,7 @@ public class CmdParser {
             System.err.println("Ошибка: " + e.getMessage());
             System.exit(1);
         }
-        return OptionHolderCreator.of(cmd);
+        return OptionHolderFactory.of(cmd);
     }
 
     private void init() {

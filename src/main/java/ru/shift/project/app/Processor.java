@@ -1,10 +1,11 @@
-package ru.shift.project;
+package ru.shift.project.app;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.shift.project.statictic.FullStatisticManager;
-import ru.shift.project.statictic.ShortStatisticManager;
-import ru.shift.project.statictic.StatisticManager;
+import ru.shift.project.cli.OptionHolder;
+import ru.shift.project.statistic.FullStatisticManager;
+import ru.shift.project.statistic.ShortStatisticManager;
+import ru.shift.project.statistic.StatisticManager;
 import ru.shift.project.writer.WriterManager;
 
 import java.io.IOException;
@@ -12,11 +13,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class MainProcessor {
-    private static final Logger LOG = LoggerFactory.getLogger(MainProcessor.class);
+public class Processor {
+    private static final Logger LOG = LoggerFactory.getLogger(Processor.class);
     private final OptionHolder optionHolder;
 
-    public MainProcessor(OptionHolder optionHolder) {
+    public Processor(OptionHolder optionHolder) {
         this.optionHolder = optionHolder;
     }
 
@@ -62,12 +63,12 @@ public class MainProcessor {
                 if (statisticManager != null) {
                     statisticManager.calculateInteger(line);
                 }
-            } else if (line.matches("^-?\\d*\\.\\d+(E-?\\d+)?$")) {
+            } else if (line.matches("^-?(?:\\d+\\.?\\d*|\\d*\\.?\\d+)([eE]-?\\d+)?$")) {
                 writerManager.writeToFloat(line);
                 if (statisticManager != null) {
                     statisticManager.calculateFloat(line);
                 }
-            } else if (line.matches("^^[a-zA-Zа-яА-Я\\s]+$")) {
+            } else if (line.matches("^[a-zA-Zа-яА-Я0-9\\s]+$")) {
                 writerManager.writeToString(line);
                 if (statisticManager != null) {
                     statisticManager.calculateString(line);

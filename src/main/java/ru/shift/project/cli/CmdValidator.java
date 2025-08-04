@@ -1,6 +1,7 @@
-package ru.shift.project;
+package ru.shift.project.cli;
 
 import org.apache.commons.cli.CommandLine;
+import ru.shift.project.exception.ValidationException;
 
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;

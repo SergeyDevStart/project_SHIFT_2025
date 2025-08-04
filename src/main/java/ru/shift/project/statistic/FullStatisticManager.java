@@ -1,4 +1,4 @@
-package ru.shift.project.statictic;
+package ru.shift.project.statistic;
 
 public class FullStatisticManager implements StatisticManager {
     private final IntegerStatistic integerStatistic = new IntegerStatistic();

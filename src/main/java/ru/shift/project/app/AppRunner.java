@@ -1,11 +1,15 @@
-package ru.shift.project;
+package ru.shift.project.app;
 
-public class Application {
+import ru.shift.project.cli.CmdParser;
+import ru.shift.project.cli.CmdValidator;
+import ru.shift.project.cli.OptionHolder;
+
+public class AppRunner {
     public void run(String[] args) {
         CmdValidator validator = new CmdValidator();
         CmdParser parser = new CmdParser(validator);
         OptionHolder optionHolder = parser.parseArguments(args);
-        MainProcessor processor = new MainProcessor(optionHolder);
+        Processor processor = new Processor(optionHolder);
         processor.process();
     }
 }

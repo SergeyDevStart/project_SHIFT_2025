@@ -1,4 +1,4 @@
-package ru.shift.project.statictic;
+package ru.shift.project.statistic;
 
 public class StringStatistic {
     private long countValue;

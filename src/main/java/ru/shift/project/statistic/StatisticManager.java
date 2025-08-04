@@ -1,4 +1,4 @@
-package ru.shift.project.statictic;
+package ru.shift.project.statistic;
 
 public interface StatisticManager {
     void calculateInteger(String value);

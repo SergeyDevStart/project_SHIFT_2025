@@ -1,11 +1,11 @@
-package ru.shift.project;
+package ru.shift.project.cli;
 
 import org.apache.commons.cli.CommandLine;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class OptionHolderCreator {
+public class OptionHolderFactory {
     public static OptionHolder of(CommandLine cmd) {
         OptionHolder optionHolder = new OptionHolder();
         optionHolder.setAppendMode(cmd.hasOption("a"));

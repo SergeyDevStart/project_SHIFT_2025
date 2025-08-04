@@ -1,4 +1,4 @@
-package ru.shift.project.statictic;
+package ru.shift.project.statistic;
 
 import java.math.BigInteger;
 
